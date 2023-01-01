@@ -1,7 +1,7 @@
 package hu.hazazs.geometry.shape;
 
-import hu.hazazs.geometry.GeometryPrerequisites;
+public abstract class Shape implements ShapeRequirements {
 
-abstract class Shape implements GeometryPrerequisites {
+	// TODO SI-től eltérő rendszerben megjeleníteni a területet és kerületet
 
 }
