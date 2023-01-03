@@ -7,6 +7,6 @@ interface ShapeRequirements {
 
 	void getAndSetSidesAndAngles(InputHandler handler);
 
-	void printAreaAndPerimeterSI(MetricUnit unit);
+	void printAreaAndPerimeter(MetricUnit unit);
 
 }
