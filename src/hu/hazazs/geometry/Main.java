@@ -2,6 +2,8 @@ package hu.hazazs.geometry;
 
 import java.util.Scanner;
 import hu.hazazs.geometry.shape.Shape;
+import hu.hazazs.geometry.util.InputHandler;
+import hu.hazazs.geometry.util.Printer;
 
 final class Main {
 

@@ -1,4 +1,4 @@
-package hu.hazazs.geometry;
+package hu.hazazs.geometry.util;
 
 import java.util.Scanner;
 import hu.hazazs.geometry.metric.MetricUnit;
@@ -15,14 +15,14 @@ public final class InputHandler {
 		this.scanner = scanner;
 	}
 
-	static InputHandler getHandler(Scanner scanner) {
+	public static InputHandler getHandler(Scanner scanner) {
 		if (handler == null) {
 			handler = new InputHandler(scanner);
 		}
 		return handler;
 	}
 
-	Shape getShape() {
+	public Shape getShape() {
 		String input;
 		int intInput;
 		ShapeEnum[] shapes = ShapeEnum.values();
@@ -90,7 +90,7 @@ public final class InputHandler {
 		return Double.parseDouble(input);
 	}
 
-	MetricUnit getUnit() {
+	public MetricUnit getUnit() {
 		String input;
 		int intInput;
 		MetricUnit[] units = MetricUnit.values();
@@ -107,7 +107,7 @@ public final class InputHandler {
 		}
 	}
 
-	int getChoice() {
+	public int getChoice() {
 		String input;
 		while (true) {
 			System.out.print(ANSIColor.getColor().black("Please choose from the menu: "));

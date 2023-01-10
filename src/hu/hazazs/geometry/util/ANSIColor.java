@@ -1,4 +1,4 @@
-package hu.hazazs.geometry;
+package hu.hazazs.geometry.util;
 
 final class ANSIColor {
 

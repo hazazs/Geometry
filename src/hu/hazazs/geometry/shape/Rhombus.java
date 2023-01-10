@@ -1,7 +1,7 @@
 package hu.hazazs.geometry.shape;
 
-import hu.hazazs.geometry.InputHandler;
 import hu.hazazs.geometry.metric.MetricUnit;
+import hu.hazazs.geometry.util.InputHandler;
 
 public final class Rhombus extends Shape {
 
