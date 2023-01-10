@@ -11,7 +11,7 @@ public abstract class Shape implements ShapeRequirements {
 
 	void printAreaAndPerimeter(double area, double perimeter, String unit) {
 		System.out.printf("A = %." + getNumberOfDecimalPlaces(area) + "f %s²%n", area, unit);
-		System.out.printf("P = %." + getNumberOfDecimalPlaces(perimeter) + "f %s", perimeter, unit);
+		System.out.printf("P = %." + getNumberOfDecimalPlaces(perimeter) + "f %s%n", perimeter, unit);
 	}
 
 	private int getNumberOfDecimalPlaces(double value) {

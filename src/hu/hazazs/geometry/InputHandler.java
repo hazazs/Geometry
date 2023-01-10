@@ -2,6 +2,8 @@ package hu.hazazs.geometry;
 
 import java.util.Scanner;
 import hu.hazazs.geometry.metric.MetricUnit;
+import hu.hazazs.geometry.shape.Shape;
+import hu.hazazs.geometry.shape.ShapeEnum;
 import hu.hazazs.geometry.shape.Side;
 
 public final class InputHandler {
@@ -18,6 +20,26 @@ public final class InputHandler {
 			handler = new InputHandler(scanner);
 		}
 		return handler;
+	}
+
+	Shape getShape() {
+		String input;
+		int intInput;
+		ShapeEnum[] shapes = ShapeEnum.values();
+		while (true) {
+			System.out.print(ANSIColor.getColor().black("Please choose from the menu: "));
+			input = scanner.nextLine();
+			intInput = input.matches("\\d+") ? Integer.parseInt(input) : 0;
+			if (intInput == shapes.length + 1) {
+				System.out.print("Good bye!");
+				System.exit(0);
+			}
+			if (intInput == 0 || intInput > shapes.length) {
+				System.out.println(ANSIColor.getColor().red("Invalid menu number."));
+				continue;
+			}
+			return shapes[intInput - 1].getShape();
+		}
 	}
 
 	public Side getSide(String identifier) {
@@ -66,6 +88,36 @@ public final class InputHandler {
 			break;
 		}
 		return Double.parseDouble(input);
+	}
+
+	MetricUnit getUnit() {
+		String input;
+		int intInput;
+		MetricUnit[] units = MetricUnit.values();
+		while (true) {
+			System.out.print(ANSIColor.getColor()
+					.black("Please choose the metric unit in which do you want to see the results: "));
+			input = scanner.nextLine();
+			intInput = input.matches("\\d+") ? Integer.parseInt(input) : 0;
+			if (intInput == 0 || intInput > units.length) {
+				System.out.println(ANSIColor.getColor().red("Invalid menu number."));
+				continue;
+			}
+			return units[intInput - 1];
+		}
+	}
+
+	int getChoice() {
+		String input;
+		while (true) {
+			System.out.print(ANSIColor.getColor().black("Please choose from the menu: "));
+			input = scanner.nextLine();
+			if (!"1".equals(input) && !"2".equals(input) && !"3".equals(input)) {
+				System.out.println(ANSIColor.getColor().red("Invalid menu number."));
+				continue;
+			}
+			return Integer.parseInt(input);
+		}
 	}
 
 }
