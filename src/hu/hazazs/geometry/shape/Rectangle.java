@@ -3,7 +3,7 @@ package hu.hazazs.geometry.shape;
 import hu.hazazs.geometry.metric.MetricUnit;
 import hu.hazazs.geometry.util.InputHandler;
 
-public final class Rectangular extends Shape {
+public final class Rectangle extends Shape {
 
 	private Side A;
 	private Side B;

@@ -15,7 +15,7 @@ public abstract class Shape implements ShapeRequirements {
 	}
 
 	private int getNumberOfDecimalPlaces(double value) {
-		if (value == (int) value) {
+		if (String.format("%f", value).matches("\\d+,0+")) {
 			return 0;
 		} else {
 			value -= (int) value;
@@ -23,8 +23,7 @@ public abstract class Shape implements ShapeRequirements {
 			while (value * Math.pow(10.0, numberOfDecimalPlaces) < 1) {
 				numberOfDecimalPlaces++;
 			}
-			return String.format("%." + (numberOfDecimalPlaces + 1) + "f", value).endsWith("0") ? numberOfDecimalPlaces
-					: numberOfDecimalPlaces + 1;
+			return numberOfDecimalPlaces + 1;
 		}
 	}
 

@@ -2,7 +2,7 @@ package hu.hazazs.geometry.shape;
 
 public enum ShapeEnum {
 
-	SQUARE(new Square()), RECTANGULAR(new Rectangular()), PARALLELOGRAM(new Parallelogram()), RHOMBUS(new Rhombus()),
+	SQUARE(new Square()), RECTANGLE(new Rectangle()), PARALLELOGRAM(new Parallelogram()), RHOMBUS(new Rhombus()),
 	KITE(new Kite());
 
 	private final Shape shape;

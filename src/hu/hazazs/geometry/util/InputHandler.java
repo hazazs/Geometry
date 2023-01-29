@@ -51,7 +51,7 @@ public final class InputHandler {
 			input = scanner.nextLine();
 			if ((inputUnit = getUnit(input)) == null) {
 				System.out.println(ANSIColor.getColor().red(
-						"The length must be a valid floating point number (with dot as a decimal point if needed) followed by a space and one of these metric units:"));
+						"The length must be a valid positive floating point number (with dot as a decimal point if needed) followed by a space and one of these metric units:"));
 				for (MetricUnit unit : MetricUnit.values()) {
 					System.out.println(unit.getUnit());
 				}
@@ -82,7 +82,7 @@ public final class InputHandler {
 			input = scanner.nextLine();
 			if (!input.matches("\\d+(\\.\\d+)?")) {
 				System.out.println(ANSIColor.getColor().red(
-						"The length must be a valid floating point number (with dot as a decimal point if needed)."));
+						"The length must be a valid positive floating point number (with dot as a decimal point if needed)."));
 				continue;
 			}
 			break;
